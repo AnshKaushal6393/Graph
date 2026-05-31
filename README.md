@@ -14,14 +14,16 @@ Both traversal examples use an undirected graph with 5 vertices and start from v
 ### Cycle Detection
 
 - Cycle detection in an undirected graph using DFS: `cycle_detection/undirected_dfs.cpp`
+- Cycle detection in an undirected graph using BFS: `cycle_detection/undirected_bfs.cpp`
 
-The cycle detection solution builds an adjacency list from an edge list and checks every connected component.
+The cycle detection solutions use parent tracking and check every connected component.
 
 ## Project Structure
 
 ```text
 Graph/
 |-- cycle_detection/
+|   |-- undirected_bfs.cpp
 |   `-- undirected_dfs.cpp
 |-- traversal/
 |   |-- bfs.cpp
@@ -54,7 +56,7 @@ On Windows PowerShell, run the compiled files as:
 .\dfs.exe
 ```
 
-The cycle detection file is written as a `Solution` class, so it is ready to use in coding-platform style drivers or can be connected to a custom `main()` function.
+The cycle detection files are written as `Solution` classes, so they are ready to use in coding-platform style drivers or can be connected to a custom `main()` function.
 
 ## Example Output
 
@@ -69,4 +71,4 @@ For the current sample graph, both traversal programs print:
 - The graph is represented using an adjacency list.
 - BFS uses a queue to visit vertices level by level.
 - DFS uses recursion to visit vertices depth first.
-- Undirected cycle detection uses DFS with parent tracking.
+- Undirected cycle detection uses parent tracking to identify already visited non-parent nodes.
