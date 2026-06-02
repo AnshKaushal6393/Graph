@@ -19,6 +19,12 @@ Both traversal examples use an undirected graph with 5 vertices and start from v
 
 The undirected cycle detection solutions use parent tracking and check every connected component. The directed DFS solution uses visited and path-visited arrays to detect a back edge in the current recursion path.
 
+### Topological Sort
+
+- Topological sort using DFS: `topological_sort/dfs.cpp`
+
+The DFS topological sort solution visits every vertex, pushes each vertex onto a stack after all of its outgoing neighbors are processed, and then pops the stack to produce a valid ordering for a directed acyclic graph.
+
 ## Project Structure
 
 ```text
@@ -27,6 +33,8 @@ Graph/
 |   |-- directed_dfs.cpp
 |   |-- undirected_bfs.cpp
 |   `-- undirected_dfs.cpp
+|-- topological_sort/
+|   `-- dfs.cpp
 |-- traversal/
 |   |-- bfs.cpp
 |   `-- dfs.cpp
@@ -62,6 +70,7 @@ The cycle detection files are written as `Solution` classes, so they are ready t
 
 - `undirected_dfs.cpp` builds an adjacency list from an edge list.
 - `undirected_bfs.cpp` and `directed_dfs.cpp` expect an adjacency list as `vector<int> adj[]`.
+- `topological_sort/dfs.cpp` expects a directed graph adjacency list as `vector<int> adj[]` and returns the ordering from `topoSort`.
 
 ## Example Output
 
@@ -78,3 +87,4 @@ For the current sample graph, both traversal programs print:
 - DFS uses recursion to visit vertices depth first.
 - Undirected cycle detection uses parent tracking to identify already visited non-parent nodes.
 - Directed cycle detection uses recursion path tracking to identify back edges.
+- DFS topological sort is intended for directed acyclic graphs.
