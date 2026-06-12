@@ -23,6 +23,7 @@ The undirected cycle detection solutions use parent tracking and check every con
 
 - Topological sort using DFS: `topological_sort/dfs.cpp`
 - Topological sort using Kahn's algorithm (BFS): `topological_sort/bsf.cpp`
+- Bipartite check using DFS: `bipartite/dfs.cpp`
 
 The DFS topological sort solution visits every vertex, pushes each vertex onto a stack after all of its outgoing neighbors are processed, and then pops the stack to produce a valid ordering for a directed acyclic graph.
 
